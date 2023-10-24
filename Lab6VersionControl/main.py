@@ -6,7 +6,8 @@ def password_encoder(password):
         if digit.isdigit():
             encoded_digit = (int(digit) + 3) % 10
             encoded_password += str(encoded_digit)
-        return encoded_password
+
+    return encoded_password
 
 
 if __name__ == "__main__":
@@ -19,8 +20,10 @@ if __name__ == "__main__":
         print()
         option = int(input("Please enter an option: "))
         if option == 1:
-            password = int(input("Please enter your password to encode: "))
+            password = input("Please enter your password to encode: ")
+            encoded_password = password_encoder(password)
             print("Your password has been encoded and stored!")
+            print()
         elif option == 2:
             pass
         elif option == 3:
